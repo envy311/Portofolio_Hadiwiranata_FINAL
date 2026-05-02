@@ -131,7 +131,7 @@ function App() {
                 avatarUrl="project/fotofoto.jpeg"
                 title=" "
                 showUser
-                Info={true}
+                Info={false}
                 behindGlowColor="rgba(125, 190, 255, 0.67)"
                 enableTilt={true}
                 enableMobileTilt={false}
@@ -462,7 +462,7 @@ function App() {
                       rel="noopener noreferrer"
                       className="mt-5 bg-zinc-600 rounded-lg p-2 block text-center hover:bg-zinc-700"
                     >
-                      Lihat File
+                      Lihat File 
                     </a>
                   )}
                 </div>
