@@ -12,6 +12,9 @@ import Tools9 from "/assets/tools/ai.png";
 import Tools10 from "/assets/tools/canva.png";
 import Tools11 from "/assets/tools/prem.png";
 import Tools12 from "/assets/tools/php.png";
+import Tools13 from "/assets/tools/msword.webp";
+import Tools14 from "/assets/tools/excel.webp";
+import Tools15 from "/assets/tools/powerpoint.png";
 
 export const listTools = [
   {
@@ -98,7 +101,27 @@ export const listTools = [
     ket: "Language",
     dad: "1100",
   },
-  
+      {
+    id: 13,
+    gambar: Tools13,
+    nama: "MS Word",
+    ket: "Office App",
+    dad: "1100",
+  },
+      {
+    id: 14,
+    gambar: Tools14,
+    nama: "MS Excel",
+    ket: "Office App",
+    dad: "1100",
+  },
+    {
+    id: 15,
+    gambar: Tools15,
+    nama: "MS PowerPoint",
+    ket: "Office App",
+    dad: "1100",
+  },
 ];
 
 import Proyek1 from "/assets/proyek/proyek1.png";
