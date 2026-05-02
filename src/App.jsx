@@ -97,7 +97,18 @@ function App() {
             />
 </div>
             <div className="flex space-x-2 flex-wrap">
-              <StarBorder as="button" className="custom-class" color="cyan" speed="5s">
+              <StarBorder 
+                as="button" 
+                className="custom-class" 
+                color="cyan" 
+                speed="5s"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/assets/cv/CV_Hadi_wiranata.pdf'; // path file CV kamu
+                  link.download = 'CV-Hadi-Wiranata.pdf';
+                  link.click();
+                }}
+              >
                 Download CV
               </StarBorder>
               <StarBorder as="button" className="custom-class" color="cyan" speed="5s" button onClick={() => window.location.href = "#project"}>
@@ -131,58 +142,97 @@ function App() {
         </div>
 
 {/* ===== ABOUT ===== */}
-<div className="about py-20" id="about">
+<div className="about py-12 sm:py-20 px-4" id="about">
   <div
-    className="flex flex-col md:flex-row w-full max-w-6xl mx-auto bg-zinc-900 p-6 items-center gap-6 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] overflow-hidden"
+    className="w-full max-w-6xl mx-auto bg-zinc-900 rounded-2xl sm:rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
     data-aos="fade-up"
     data-aos-duration="900"
   >
-    <div className="md:w-2/3 flex flex-col gap-4 ml-6">
-      <h1
-        className="text-white text-3xl sm:text-4xl font-bold"
-        data-aos="fade-right"
-        data-aos-delay="100"
-      >
-        ABOUT
-      </h1>
-      <div className="text-white text-sm text-justify leading-relaxed">
-        <TextType 
-          text={["A graduate in Information Systems from Universitas Nusantara PGRI Kediri with a strong passion for technology, data analysis, and business solution development. I have a deep curiosity for how technology can be leveraged to solve real-world problems and improve organizational efficiency. Throughout my academic journey, I have consistently explored and adapted to various tools, platforms, and frameworks to enhance productivity and deliver innovative, data-driven solutions.  I possess solid proficiency in Microsoft Office applications, particularly Excel for data processing and analysis, Word for structured and professional documentation, and PowerPoint for creating clear, engaging, and impactful presentations.  These skills enable me to transform raw data into meaningful insights and communicate them effectively to different audiences. In addition to my technical capabilities, I have foundational skills in visual editing and digital content creation, allowing me to support both analytical and creative aspects of a project.   My experience is built from a combination of academic projects and continuous self-development, where I have actively strengthened my problem-solving abilities, critical thinking, and attention to detail.  I am also highly adaptable, able to work both independently and collaboratively within a team environment. I value effective communication, continuous learning, and the ability to quickly adjust to new challenges and technologies. With a strong commitment to personal and professional growth, I am eager to contribute my technological, analytical, and creative skills to an organization, delivering impactful results and adding value in a dynamic professional environment."]}
+
+    {/* ── MOBILE ── */}
+    <div className="flex flex-col md:hidden p-5 gap-4">
+      {/* Wrapper yang memotong h-screen dari Lanyard */}
+      <div style={{ height: "300px", overflow: "hidden" }}>
+        <div style={{ height: "100vh", transform: "scale(0.90)", transformOrigin: "top center", marginBottom: "-68vh", marginTop: "-18vh" }}>
+          <Lanyard />
+        </div>
+      </div>
+
+      <h1 className="text-white text-2xl font-bold text-center">ABOUT</h1>
+      <div className="text-white text-xs leading-relaxed text-justify">
+        <TextType
+          text={["A graduate in Information Systems from Universitas Nusantara PGRI Kediri with a strong passion for technology, data analysis, and business solution development. I have a deep curiosity for how technology can be leveraged to solve real-world problems and improve organizational efficiency. Throughout my academic journey, I have consistently explored and adapted to various tools, platforms, and frameworks to enhance productivity and deliver innovative, data-driven solutions. I possess solid proficiency in Microsoft Office applications, particularly Excel for data processing and analysis, Word for structured and professional documentation, and PowerPoint for creating clear, engaging, and impactful presentations. These skills enable me to transform raw data into meaningful insights and communicate them effectively to different audiences. In addition to my technical capabilities, I have foundational skills in visual editing and digital content creation, allowing me to support both analytical and creative aspects of a project. My experience is built from a combination of academic projects and continuous self-development, where I have actively strengthened my problem-solving abilities, critical thinking, and attention to detail. I am also highly adaptable, able to work both independently and collaboratively within a team environment. I value effective communication, continuous learning, and the ability to quickly adjust to new challenges and technologies. With a strong commitment to personal and professional growth, I am eager to contribute my technological, analytical, and creative skills to an organization, delivering impactful results and adding value in a dynamic professional environment."]}
           typingSpeed={2}
           pauseDuration={100000}
           showCursor
           cursorCharacter="_"
           deletingSpeed={100}
           variableSpeedEnabled={false}
-          variableSpeedMin={60}
-          variableSpeedMax={120}
-          cursorBlinkDuration={0.5}
         />
       </div>
-      <div
-        className="flex flex-col sm:flex-row gap-4"
-        data-aos="zoom-in"
-        data-aos-delay="200"
-      >
-        <div className="bg-zinc-700 p-4 rounded-xl text-center flex-1">
-          <h3 className="text-xl sm:text-2xl font-bold text-white">Fresh Graduate</h3>
-          <p className="text-white text-sm">Experience</p>
+      <div className="flex flex-row gap-3">
+        <div className="bg-zinc-700 p-3 rounded-xl text-center flex-1">
+          <h3 className="text-sm font-bold text-white">Fresh Graduate</h3>
+          <p className="text-zinc-300 text-xs">Experience</p>
         </div>
-                <div className="bg-zinc-700 p-4 rounded-xl text-center flex-1">
-          <h3 className="text-xl sm:text-2xl font-bold text-white">5+</h3>
-          <p className="text-white text-sm">Project</p>
+        <div className="bg-zinc-700 p-3 rounded-xl text-center flex-1">
+          <h3 className="text-sm font-bold text-white">5+</h3>
+          <p className="text-zinc-300 text-xs">Project</p>
         </div>
       </div>
     </div>
 
-    <div
-      className="md:w-1/3 flex justify-center items-center rounded-3xl"
-      style={{ height: "420px", overflow: "visible" }}
-      data-aos="fade-left"
-      data-aos-delay="300"
-    >
-      <Lanyard />
+    {/* ── DESKTOP ── */}
+    <div className="hidden md:flex flex-row items-center">
+      {/* Teks kiri */}
+      <div className="w-2/3 flex flex-col gap-4 p-8 pl-10">
+        <h1
+          className="text-white text-4xl font-bold"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
+          ABOUT
+        </h1>
+        <div className="text-white text-sm text-justify leading-relaxed">
+          <TextType
+            text={["A graduate in Information Systems from Universitas Nusantara PGRI Kediri with a strong passion for technology, data analysis, and business solution development. I have a deep curiosity for how technology can be leveraged to solve real-world problems and improve organizational efficiency. Throughout my academic journey, I have consistently explored and adapted to various tools, platforms, and frameworks to enhance productivity and deliver innovative, data-driven solutions. I possess solid proficiency in Microsoft Office applications, particularly Excel for data processing and analysis, Word for structured and professional documentation, and PowerPoint for creating clear, engaging, and impactful presentations. These skills enable me to transform raw data into meaningful insights and communicate them effectively to different audiences. In addition to my technical capabilities, I have foundational skills in visual editing and digital content creation, allowing me to support both analytical and creative aspects of a project. My experience is built from a combination of academic projects and continuous self-development, where I have actively strengthened my problem-solving abilities, critical thinking, and attention to detail. I am also highly adaptable, able to work both independently and collaboratively within a team environment. I value effective communication, continuous learning, and the ability to quickly adjust to new challenges and technologies. With a strong commitment to personal and professional growth, I am eager to contribute my technological, analytical, and creative skills to an organization, delivering impactful results and adding value in a dynamic professional environment."]}
+            typingSpeed={2}
+            pauseDuration={100000}
+            showCursor
+            cursorCharacter="_"
+            deletingSpeed={100}
+            variableSpeedEnabled={false}
+          />
+        </div>
+        <div
+          className="flex flex-row gap-4 mt-2"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <div className="bg-zinc-700 p-4 rounded-xl text-center flex-1">
+            <h3 className="text-2xl font-bold text-white">Fresh Graduate</h3>
+            <p className="text-zinc-300 text-sm">Experience</p>
+          </div>
+          <div className="bg-zinc-700 p-4 rounded-xl text-center flex-1">
+            <h3 className="text-2xl font-bold text-white">5+</h3>
+            <p className="text-zinc-300 text-sm">Project</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Lanyard kanan — clip h-screen dengan overflow hidden */}
+      <div
+        className="w-1/3"
+        style={{ height: "420px", overflow: "hidden" }}
+        data-aos="fade-left"
+        data-aos-delay="300"
+      >
+        <div style={{ height: "100vh", transform: "scale(0.90)", transformOrigin: "top center", marginTop: "-18vh" }}>
+          <Lanyard />
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
 
@@ -410,7 +460,7 @@ function App() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 bg-zinc-600 rounded-lg p-2 block text-center hover:bg-green-700"
+                      className="mt-5 bg-zinc-600 rounded-lg p-2 block text-center hover:bg-zinc-700"
                     >
                       Lihat File Excel
                     </a>

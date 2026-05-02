@@ -181,6 +181,6 @@ export const listExcel = [
     nama: "Sales Report and Stock Opname",
     desk: "Developed a comprehensive sales and inventory report to monitor product performance and stock levels. This project includes data processing, sales analysis, and stock reconciliation using Microsoft Excel. Utilized formulas to generate clear insights, helping improve decision-making and ensure accurate inventory recording.",
     gambar: "/assets/office/office2.png",
-    link: "https://drive.google.com/"
+    link: "https://docs.google.com/spreadsheets/d/1eQ6hrSp_CQ93ez5E8SXFW_nDvO-2VxoO/edit?usp=sharing&ouid=116380084217184947876&rtpof=true&sd=true"
   }
 ];

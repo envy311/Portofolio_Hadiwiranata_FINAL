@@ -16,7 +16,7 @@ export default function Footer() {
         {/* Right side - Socials */}
         <div className="flex space-x-5 text-cyan-400 text-2xl">
           <a
-            href="https://github.com/"
+            href="https://github.com/envy311"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white hover:scale-110 transition-all duration-300"
@@ -24,7 +24,7 @@ export default function Footer() {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/public-profile/settings/?trk=d_flagship3_profile_self_view_public_profile&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BWq%2FsHWCTQ56D5f%2F4wd%2Fgag%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white hover:scale-110 transition-all duration-300"
@@ -32,7 +32,7 @@ export default function Footer() {
             <FaLinkedin />
           </a>
           <a
-            href="https://instagram.com/"
+            href="https://www.instagram.com/nata_311/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white hover:scale-110 transition-all duration-300"
