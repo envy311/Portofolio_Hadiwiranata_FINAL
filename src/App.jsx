@@ -462,7 +462,7 @@ function App() {
                       rel="noopener noreferrer"
                       className="mt-5 bg-zinc-600 rounded-lg p-2 block text-center hover:bg-zinc-700"
                     >
-                      Lihat File Excel
+                      Lihat File
                     </a>
                   )}
                 </div>
